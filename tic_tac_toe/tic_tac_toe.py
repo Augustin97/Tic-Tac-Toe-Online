@@ -69,7 +69,7 @@ class TicTacToe:
         for row in plateau:
             if row == ["X", "X", "X"] or row == ["O", "O", "O"]:
                 print("la partie est terminée")
-                break
+                end = True
 
         buffer = []
         while c < 3:
@@ -77,7 +77,7 @@ class TicTacToe:
                 buffer.append(plateau[i][c])
             if buffer == ["X", "X", "X"] or buffer == ["O", "O", "O"]:
                 print("La partie est terminée")
-                break
+                end = True
             else:
                 buffer = []
                 c += 1
