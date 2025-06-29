@@ -47,15 +47,18 @@ class TicTacToe:
     def make_move(plateau, player):
         # Penser aux cas limites, i.e un utilisateur mets une valeur qui dépasse les bounds du tableau
         # try except de la valeur rentrée par l'utilisateur
-        x, y = input("Veuillez rentrer la position de votre choix: " ).split()
-        if plateau[int(x)][int(y)] != 0:
-            print("Cette position est déjà prise")
-        else:
-            if player == "Player 1":
-                plateau[int(x)][int(y)] = "X"
+        try:
+            x, y = input("Veuillez rentrer la position de votre choix: " ).split()
+            if plateau[int(x)][int(y)] != 0:
+                print("Cette position est déjà prise")
             else:
-                plateau[int(x)][int(y)] = "O"
-        print(plateau)
+                if player == "Player 1":
+                    plateau[int(x)][int(y)] = "X"
+                else:
+                    plateau[int(x)][int(y)] = "O"
+            print(plateau)
+        except IndexError as e:
+            print(f'Les positions ne sont pas valides {e}')
         return plateau
 
     @staticmethod

@@ -12,7 +12,6 @@ if __name__ == "__main__":
     list_moves = []
     tic_tac_toe.TicTacToe.select_player(start, list_moves)
     for i in range(0, 10):
-        print(i)
         player = tic_tac_toe.TicTacToe.select_player(i, list_moves)
         plateau = tic_tac_toe.TicTacToe.make_move(plateau, player)
         tic_tac_toe.TicTacToe.check_board(plateau)
