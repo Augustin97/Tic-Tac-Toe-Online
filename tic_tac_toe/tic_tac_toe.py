@@ -10,7 +10,7 @@ class TicTacToe:
                    [0,0,0],
                    [0,0,0]]
 
-        return plateau
+        return plateau, True
 
     @staticmethod
     def select_player(turns: int, list_moves):
@@ -88,11 +88,12 @@ class TicTacToe:
         # Une fois que le plateau est actualisé, vérifier qu'aucun des joueurs ait gagné
         # Si un joueur gagne terminer la partie et si le tableau est rempli terminer aussi
         # condition pour terminer une partie de renvoyer un booléen.
-        return
+        return False
 
     def restart_game(self):
         reset = input("Voulez vous rejouer? : ")
         if reset == "oui":
-            self.start_game()
+            output = self.start_game()[1]
         else:
-            self.end_game()
+            output = self.end_game()
+        return output
