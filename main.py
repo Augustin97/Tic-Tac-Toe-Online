@@ -1,5 +1,3 @@
-import os
-import random
 import sys
 from tic_tac_toe import tic_tac_toe
 
@@ -16,7 +14,7 @@ if __name__ == "__main__":
         plateau = tic_tac_toe.TicTacToe.make_move(plateau, player)
         start += 1
         if tic_tac_toe.TicTacToe.check_board(plateau):
-            play = tic_tac_toe.TicTacToe().restart_game()
+            play, plateau = tic_tac_toe.TicTacToe().restart_game()
         else:
             pass
 

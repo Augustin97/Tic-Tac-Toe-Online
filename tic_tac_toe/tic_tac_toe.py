@@ -30,9 +30,9 @@ class TicTacToe:
             first_player = list_moves[0]
             if first_player == "Player 1":
                 if turns % 2 == 0:
-                    list_moves.append("Player 2")
-                else:
                     list_moves.append("Player 1")
+                else:
+                    list_moves.append("Player 2")
             else:
                 if turns % 2 == 0:
                     list_moves.append("Player 2")
@@ -94,6 +94,8 @@ class TicTacToe:
         reset = input("Voulez vous rejouer? : ")
         if reset == "oui":
             output = self.start_game()[1]
+            plateau = self.start_game()[0]
         else:
             output = self.end_game()
-        return output
+            plateau = None
+        return output, plateau
